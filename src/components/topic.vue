@@ -2,7 +2,7 @@
     <div class="post">
         <div class="head">
             <a class="no" v-text="post.post_no" href="{{post.post_id | href}}" target="_blank"></a>
-            <span class="user" v-text="post.user_name" v-link="{path: post.user_id}"></span>
+            <span class="user" v-text="post.user_name" v-link="{path: post.user_id, append: true}"></span>
             <span class="date" v-text="post.date.iso | localTime"></span>
         </div>
         <div class="detile" v-html="post.content | trimBr">

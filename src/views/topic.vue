@@ -1,7 +1,7 @@
 <template>
     <loading v-show="loading"></loading>
     <div class="container">
-        <topic :post="post" v-for="post in posts" keep-alive></topic>
+        <topic :post="post" v-for="post in posts"></topic>
     </div>
 </template>
 

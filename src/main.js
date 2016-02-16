@@ -13,7 +13,8 @@ Vue.use(VueResource);
 
 var router = new VueRouter({
     history: true,
-    saveScrollPosition: true
+    root: '/diary2',
+    saveScrollPosition: true,
 });
 routerMap(router);
 router.start(Vue.extend(), '#app');
