@@ -1,4 +1,4 @@
-# undefinedundefinedundefinedundefinedundefinedundefinedundefinedundefinedundefineddiary
+# diary
 
 > A Vue.js project
 

@@ -1,13 +1,11 @@
 <template>
-    <div class="loading" v-show="show">
-        <div class="a"></div>
+    <div class="loading">
     </div>
 </template>
 
 <script>
     export default {
         replace: true,
-        props: ['show']
     }
 </script>
 

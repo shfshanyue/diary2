@@ -1,17 +1,22 @@
 <template>
-    <div class="alert" v-if="show">
+    <div class="alert" v-show="show">
         <slot></slot>
+        <span @click="show = false">&times;</span>
     </div>
 </template>
 
 <script>
     export default {
         replace: true,
-        props: ['show']
+        data () {
+            return {
+                show: true
+            }
+        }
     }
 </script>
 
-<style>
+<style lang="sass">
     .alert {
         position: fixed;
         top: 0;
@@ -22,5 +27,12 @@
         text-align: center;
         opacity: .3;
         color: #fff;
+
+        span {
+            position: absolute;
+            right: 30px;
+            font-size: 1.3em;
+            cursor: pointer
+        }
     }
 </style>
