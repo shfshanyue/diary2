@@ -11,8 +11,9 @@ Object.keys(filters).forEach((filter) => Vue.filter(filter, filters[filter]));
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-// this.$http.ajaxSettings.crossDomain = true;
-
-var router = new VueRouter();
+var router = new VueRouter({
+    history: true,
+    saveScrollPosition: true
+});
 routerMap(router);
 router.start(Vue.extend(), '#app');
