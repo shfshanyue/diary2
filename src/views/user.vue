@@ -24,6 +24,7 @@ export default {
     route: {
         activate (transition) {
             transition.next();
+            this.posts = [];
             this.loading = true;
             this.load(transition.to.params.user, (data) => {
                 this.posts = data;

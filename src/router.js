@@ -5,7 +5,7 @@ export default function (router) {
     router.map({
         '/': {
             name: 'home',
-            component: Topic
+            component: Topic,
         },
         '/:user': {
             name: 'user',
