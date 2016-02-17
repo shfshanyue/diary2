@@ -1,5 +1,7 @@
 <template>
     <div>
+        <alert>点击帖子前的楼层，将转至贴吧相关页面。</alert>
+        <alert>点击昵称，将列出该昵称的所有帖子。</alert>
         <loading v-show="loading"></loading>
         <div class="container">
             <topic :post="post" v-for="post in posts"></topic>

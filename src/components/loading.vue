@@ -1,6 +1,5 @@
 <template>
-    <div class="loading">
-    </div>
+    <div class="loading"></div>
 </template>
 
 <script>
@@ -9,7 +8,7 @@
     }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     .loading {
         position: fixed;
         top: 0;

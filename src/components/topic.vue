@@ -24,7 +24,7 @@
     }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
     .post {
         padding: 20px 0;
         border-bottom: 1px solid #eee;
