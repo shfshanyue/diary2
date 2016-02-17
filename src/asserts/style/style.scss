@@ -35,3 +35,13 @@ html, body {
     width: 1170px;
   }
 }
+
+.fade-transition {
+  position: relative;
+  transition: all ease .1s;
+}
+
+.fade-enter,
+.fade-leave {
+  opacity: 0;
+}
