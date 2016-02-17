@@ -30,6 +30,21 @@ export default {
             }).catch(() => {
                 cb(null);
             });
+        },
+        notify () {
+            let html = document.getElementsByTagName('html')[0];
+            let func = (event) => {
+                let ch = html.clientHeight;
+                let sh = html.scrollHeight;
+                if (html.scrollTop + ch + 10 > sh ) {
+                    setTimeout( () => {
+                        window.addEventListener('scroll', func);
+                    }, 1000);
+                    this.page++;
+                    window.removeEventListener('scroll', func);
+                }
+            };
+            window.addEventListener('scroll', func);
         }
     },
 
@@ -38,19 +53,7 @@ export default {
             this.$set('posts', data);
             this.loading = false;
         });
-        var html = document.getElementsByTagName('html')[0];
-        var ch = html.clientHeight;
-        var func = (event) => {
-            var sh = html.scrollHeight;
-            if (html.scrollTop + ch + 100 > sh ) {
-                setTimeout( () => {
-                    window.addEventListener('scroll', func);
-                }, 1000);
-                this.page++;
-                window.removeEventListener('scroll', func);
-            }
-        };
-        window.addEventListener('scroll', func);
+        this.notify();
     },
 
     components: {

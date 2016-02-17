@@ -2,7 +2,7 @@
     <alert>{{ posts[0].user_name }} 总共写日记 {{ posts.length }} 篇</alert>
     <loading v-show="loading"></loading>
     <div class="container">
-        <topic :post="post" v-for="post in posts"></topic>
+        <topic :post="post" v-for="post in posts" :user-href="false"></topic>
     </div>
 </template>
 
