@@ -27,16 +27,10 @@
     }
 
     @keyframes rotate-circle {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        50% {
-            transform: rotate(180deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
+        @for $i from 0 through 10 {
+            #{percentage($i/10)} {
+                transform: rotate(360deg * $i / 10)
+            }
         }
     }
 </style>

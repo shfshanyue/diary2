@@ -69,5 +69,6 @@ export default {
 </script>
 
 <style>
+@import '../asserts/style/style.scss'
 
 </style>
