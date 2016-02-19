@@ -1,8 +1,10 @@
 <template>
-    <alert>{{ posts[0].user_name }} 总共写日记 {{ posts.length }} 篇</alert>
-    <loading v-show="loading"></loading>
-    <div class="container">
-        <topic :post="post" v-for="post in posts" :user-href="false"></topic>
+    <div>
+        <alert v-if="!$loadingRouteData">{{ posts[0].user_name }} 总共写日记 {{ posts.length }} 篇</alert>
+        <loading v-show="$loadingRouteData"></loading>
+        <div class="container">
+            <topic :post="post" v-for="post in posts" :user-href="false"></topic>
+        </div>
     </div>
 </template>
 
@@ -11,7 +13,6 @@ export default {
     data () {
         return {
             posts: [],
-            loading: false
         }
     },
 
@@ -22,13 +23,13 @@ export default {
     },
 
     route: {
-        activate (transition) {
-            transition.next();
+        data (transition) {
             this.posts = [];
             this.loading = true;
             this.load(transition.to.params.user, (data) => {
-                this.posts = data;
-                this.loading = false;
+                transition.next({
+                    posts: data,
+                });
             });
         }
     },
