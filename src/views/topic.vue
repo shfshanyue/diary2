@@ -34,11 +34,10 @@ export default {
             });
         },
         notify () {
-            let html = document.getElementsByTagName('html')[0];
+            let html = document.documentElement;
+            let body = document.body;
             let func = (event) => {
-                let ch = html.clientHeight;
-                let sh = html.scrollHeight;
-                if (html.scrollTop + ch + 10 > sh ) {
+                if (html.scrollTop + body.scrollTop + html.clientHeight + 10 > html.scrollHeight ) {
                     setTimeout( () => {
                         window.addEventListener('scroll', func);
                     }, 1000);
